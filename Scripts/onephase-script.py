@@ -9,7 +9,7 @@ oneshot_results = f"RESULTS_DIRECTORY.JSON"
 data_path = f"PATH_TO_CODENETMUT.JSON"
 
 def chatgpt_interaction():
-    with open('main-prompt.txt', 'r') as file:
+    with open('temporary-prompt.txt', 'r') as file:
         prompt = file.read()
 
     openai.api_type = "azure"
