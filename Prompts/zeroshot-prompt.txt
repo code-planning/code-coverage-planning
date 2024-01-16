@@ -1,0 +1,14 @@
+For the given code snippet, Predict the code coverage. The code coverage indicates whether a statement has been executed or not. 
+> if the line is executed
+! if the line is not executed
+
+Example output:
+> line1
+! line2
+> line3
+...
+> linen
+
+Note: Executed Lines must be denoted with a SINGLE '>' and non executed Lines must be denoted with a SINGLE '!'
+DISCLAIMER: DO NOT PROVIDE AN EXPLANATION. JUST PROVIDE THE FINAL PREDICTED CODE COVERAGE FOR THE GIVEN CODE SNIPPET
+Only give the final predicted code coverage of the code. 

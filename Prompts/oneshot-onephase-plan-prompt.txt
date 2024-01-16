@@ -1,0 +1,82 @@
+For the given code snippet, Predict the code coverage. The code coverage indicates whether a statement has been executed or not. 
+> if the line is executed
+! if the line is not executed
+
+Example output:
+> line1
+! line2
+> line3
+...
+> linen
+
+You need to develop a plan for step by step execution of the code snippet. 
+Below is an illustration of the process you need to follow to predict the code coverage of the given code snippet. 
+
+Example - 
+Given Code snippet : 
+from math import factorial
+def comb(n, r):
+    return factorial(n)
+def main():
+    N = 2
+    P = 0
+    A = [1, 3]
+    even, odd = 0, 0
+    for i in range(N):
+        if A[i] % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+    a, b = 0, 0
+    b = 2**even
+    for i in range(odd + 1):
+        if i % 2 == P:
+            a += comb(odd, i)
+    print(a * b)
+if __name__ == "__main__":
+    main()
+DISCLAIMER: Lines that are not executed are to be denoted with a SINGLE '!' whereas lines that are executed are to be denoted with a single '>'
+Given 
+PLAN: 
+Step 1: Import Statement : factorial is a packahe being imported from math library. Import statements are always executed. Statement "from math import factorial" will ne executed.
+Step 2: Check __name__ : Check if the script is being run as a main program. Since it is, "if __name__ == "__main__": " will be executed. 
+Step 3: Main method call: Since the script is being run as the main program, call the main method. "main()" will be executed
+Step 4: Main Method Execution: Contents inside mthod will be executed. "def main(): " will be executed. Since "N = 2", "P = 0", "A = [1, 3]" and "even, odd = 0, 0" are all variable initialization statements, they will be executed. 
+Step 5: First For loop in Main Function:  Enter the for loop and Iteratively assign values to i from 1 to range(N). "for i in range(N):"  will be executed. 
+Step 6: If - Else Branching in For Loop: For each iteration of i, the element at A[i] is checked if its even or odd. Both elements in list A are odd, so the if statement is not satisfied and the else statement is satisfied so contents of else block is executed. Statements "if A[i] % 2 != 0:" and "odd += 1" are executed. Statements "else: " and "even += 1" is not executed. 
+Step 7: Variable initialization and Math operations : Statements "a, b = 0, 0" and "b = 2**even" are variable declarations so they both will be executed. 
+Step 8: Second For Loop in Main Function : Enter the for loop and Iteratively assign values to i from 1 to range(odd + 1). "for i in range(odd + 1):"  will be executed. 
+Step 9: If-else block withing for loop in main method: The if statement checks whether the remainder of variable i when divided by 2 is equal to value of P. Since the value of i in the second iteration is 2, the remainder is 0 which is equal to P, so the if condition is satisifed. Statement "if i % 2 == P:" is executed
+Step 10: Method call in if block of for loop: When the if statement is satisfied, the variable a is incremented with the value return by method comb. Since it is a function call, statement "a += comb(odd, i)" will be executed.
+Step 11: Called Method execution: Inside comb(), The math operation of calculating the factorial occurs. Since its a simple math operation and return statement, statement "return factorial(n)" will be executed. The statement containing the method declaration "def comb(n, r): " will also be executed.
+Step 12: Print Statement: Print statements are always executed. Statement "print(a * b)" will be executed. 
+
+So the code coverage for the given code snippet will be: 
+from math import factorial
+> def comb(n, r):
+>     return factorial(n)
+> def main():
+>     N = 2
+>     P = 0
+>     A = [1, 3]
+>     even, odd = 0, 0
+>     for i in range(N):
+>         if A[i] % 2 != 0:
+>             odd += 1
+!         else:
+!             even += 1
+>     a, b = 0, 0
+>     b = 2**even
+>     for i in range(odd + 1):
+>         if i % 2 == P:
+>             a += comb(odd, i)
+>     print(a * b)
+> if __name__ == "__main__":
+>     main()
+
+In a similar fashion, develop a plan of step by step execution of the below code snippet and predict the code coverage - 
+
+
+
+
+
